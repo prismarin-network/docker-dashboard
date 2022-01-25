@@ -1,8 +1,16 @@
+![Screenshot of the main page](./screenshot.png)
+
 # Docker Dashboard
 
 Sleek web based docker management tool.
 
-## Usage
+### Development
+
+#### Environment variables
+
+Coming soon...
+
+#### Running
 
 ```bash
 # run production build
