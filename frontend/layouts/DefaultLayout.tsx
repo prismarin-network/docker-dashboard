@@ -21,10 +21,10 @@ const SidebarLayout: React.FC<SidebarProps> = observer(({ children, ...HTMLEleme
         <main>
             <Header toggleSidebar={toggleSidebar} />
             <div className="flex overflow-hidden h-screen text-gray-200 font-poppins">
-                <Sidebar extended={sidebarExtended} pathName={router ? router.pathname : ""} toggleSidebar={toggleSidebar} />
+                <Sidebar extended={sidebarExtended} pathName={router ? router.pathname : ""} />
                 <div onClick={toggleSidebar} className={`${!sidebarExtended && 'hidden'} lg:hidden absolute z-10 w-full h-screen`} />
-                <main className="flex overflow-auto flex-col w-full min-h-screen bg-dark-dark">
-                    <div className="container flex-grow mx-auto mb-10">
+                <main className="flex overflow-auto flex-col w-full min-h-screen bg-white dark:bg-bastille-400">
+                    <div className="mt-20 flex-grow mx-7 mb-10">
                         <div {...HTMLElements} className={`flex-grow ${HTMLElements.className}`}>
                             {children}
                         </div>
