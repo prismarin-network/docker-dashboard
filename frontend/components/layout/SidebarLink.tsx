@@ -1,4 +1,4 @@
-import React, {FC} from "react";
+import React from "react";
 import Link from "next/link"
 
 declare interface SidebarLinkProps {
@@ -15,7 +15,7 @@ const isLinkActive = (pathName: string, link: string) => {
     return pathName.startsWith(link)
 }
 
-const SidebarLink: FC<SidebarLinkProps> = ({icon, title, link, pathName}) => {
+const SidebarLink = ({icon, title, link, pathName}: SidebarLinkProps) => {
 
     return (
         <li className="group relative py-2 px-5">
@@ -26,7 +26,7 @@ const SidebarLink: FC<SidebarLinkProps> = ({icon, title, link, pathName}) => {
                             <div className="absolute inset-y-0 left-0 w-1 bg-blue-400 rounded-tr-lg rounded-br-lg" aria-hidden="true"/>
                             <span className="inline-flex items-center w-full text-gray-900 dark:text-white cursor-pointer">
                                 {icon}
-                                <span className="ml-2 font-avenir">
+                                <span className="ml-2">
                                     {title}
                                 </span>
                             </span>
@@ -34,7 +34,7 @@ const SidebarLink: FC<SidebarLinkProps> = ({icon, title, link, pathName}) => {
                     ) : (
                         <span className="inline-flex items-center w-full text-gray-400 group-hover:text-gray-700 dark:group-hover:text-gray-200 cursor-pointer">
                             {icon}
-                                <span className="ml-2 font-avenir">
+                                <span className="ml-2">
                                 {title}
                             </span>
                         </span>

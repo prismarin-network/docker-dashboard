@@ -1,15 +1,15 @@
 import SidebarLink from "./SidebarLink";
-import React, {FC} from "react";
+import React from "react";
 
 import {IoLogoGithub} from "react-icons/io"
-import {FiCommand, FiLayers, FiHardDrive} from "react-icons/fi"
+import {FiCommand, FiLayers, FiHardDrive, FiSave} from "react-icons/fi"
 
 declare interface SidebarProps {
     extended: boolean,
     pathName: string,
 }
 
-const Sidebar: FC<SidebarProps> = ({extended = false, pathName = ""}) => {
+const Sidebar = ({extended = false, pathName = ""}: SidebarProps) => {
 
     return (
         <div
@@ -26,13 +26,19 @@ const Sidebar: FC<SidebarProps> = ({extended = false, pathName = ""}) => {
                         icon={<FiLayers />}
                         title="Containers"
                         pathName={pathName}
-                        link="/test"
+                        link="/containers"
+                    />
+                    <SidebarLink
+                        icon={<FiSave />}
+                        title="Images"
+                        pathName={pathName}
+                        link="/images"
                     />
                     <SidebarLink
                         icon={<FiHardDrive />}
                         title="Volumes"
                         pathName={pathName}
-                        link="/test"
+                        link="/volumes"
                     />
                 </ul>
             </div>
