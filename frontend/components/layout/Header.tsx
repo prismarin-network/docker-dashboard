@@ -1,12 +1,11 @@
 import {IoLogoDocker} from "react-icons/io5"
 import {FiMenu, FiUser} from "react-icons/fi"
-import {FC} from "react";
 
 declare interface HeaderProps {
     toggleSidebar: () => void;
 }
 
-const Header: FC<HeaderProps> = ({ toggleSidebar }) => {
+const Header = ({ toggleSidebar }: HeaderProps) => {
     return (
         <div className="flex justify-between fixed top-0 left-0 z-30 bg-blue-400 w-full py-3 px-5">
             <div className="text-white">
