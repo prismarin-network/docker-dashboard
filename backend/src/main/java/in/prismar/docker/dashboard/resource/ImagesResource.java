@@ -1,9 +1,10 @@
 package in.prismar.docker.dashboard.resource;
 
 import in.prismar.docker.dashboard.model.ImageDto;
-import in.prismar.docker.dashboard.service.ImagesService;
+import in.prismar.docker.dashboard.service.images.ImagesService;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -12,7 +13,6 @@ import javax.ws.rs.core.Response;
 import java.util.List;
 
 @Path("/images")
-
 public class ImagesResource {
 
     @Inject

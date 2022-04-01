@@ -1,26 +1,25 @@
-package in.prismar.docker.dashboard.service;
+package in.prismar.docker.dashboard.service.images.impl;
 
 import com.github.dockerjava.api.model.Image;
 import in.prismar.docker.dashboard.model.ImageDto;
+import in.prismar.docker.dashboard.service.DockerConnection;
+import in.prismar.docker.dashboard.service.images.ImagesService;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
+import javax.inject.Named;
 import java.util.ArrayList;
 import java.util.List;
 
 
 @ApplicationScoped
-public class ImagesService {
+public class DockerImagesService implements ImagesService {
 
     @Inject
     DockerConnection connection;
 
-    /**
-     * Retrieve all docker all images {@link Image}
-     * and convert it into a DTO {@link ImageDto}
-     *
-     * @return List of {@link ImageDto}
-     */
+
+    @Override
     public List<ImageDto> getAllImages() {
         List<ImageDto> images = new ArrayList<>();
         for(Image image : connection.getClient().listImagesCmd().exec()) {
@@ -29,12 +28,8 @@ public class ImagesService {
         return images;
     }
 
-    /**
-     * Retrieve a Image with the matching id. (Example: sha256:adads...)
-     *
-     * @param id
-     * @return {@link ImageDto}
-     */
+
+    @Override
     public ImageDto getImage(String id) {
         for(Image image : connection.getClient().listImagesCmd().exec()) {
             if(image.getId().equalsIgnoreCase(id)) {
@@ -44,12 +39,7 @@ public class ImagesService {
         return null;
     }
 
-    /**
-     * Delete a image with the matching id
-     *
-     * @param id
-     * @return if deletion was successful
-     */
+    @Override
     public boolean deleteImage(String id) {
         try {
             connection.getClient().removeImageCmd(id).exec();
