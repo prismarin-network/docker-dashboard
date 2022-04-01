@@ -4,7 +4,6 @@ export default function Document() {
     return (
         <Html>
             <Head>
-                <title>Docker Dashboard</title>
                 <meta name='application-name' content='Docker Dashboard' />
                 <meta name='apple-mobile-web-app-capable' content='yes' />
                 <meta name='apple-mobile-web-app-status-bar-style' content='default' />
@@ -16,7 +15,6 @@ export default function Document() {
                 <meta name='msapplication-TileColor' content='#1f1b24' />
                 <meta name='msapplication-tap-highlight' content='no' />
                 <meta name='theme-color' content='#60a5fa' />
-                <meta name='viewport' content='minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover' />
 
                 <link rel='manifest' href='/manifest.json' />
                 <link rel='shortcut icon' href='/favicon.ico' />

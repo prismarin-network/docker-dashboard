@@ -14,7 +14,7 @@ const Sidebar = ({extended = false, pathName = ""}: SidebarProps) => {
     return (
         <div
             className={`fixed flex flex-col lg:static z-20 h-screen w-72 bg-gray-100 dark:bg-bastille-500 transition-transform lg:transition-none ease-in-out duration-700 transform lg:transform-none ${!extended ? "-translate-x-80" : "translate-x-0"}`}>
-            <div className="flex-grow mt-16">
+            <div className="flex-grow mt-20">
                 <ul className="flex flex-col space-y-1">
                     <SidebarLink
                         icon={<FiCommand />}
