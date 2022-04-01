@@ -19,12 +19,12 @@ const SidebarLayout = observer(({ children, ...HTMLElements}: SidebarLayoutProps
 
     return (
         <main>
-            <Header toggleSidebar={toggleSidebar} />
+            <Header toggleSidebar={toggleSidebar} sideBarExtended={sidebarExtended} />
             <div className="flex overflow-hidden h-screen text-gray-700 dark:text-gray-200">
                 <Sidebar extended={sidebarExtended} pathName={router ? router.pathname : ""} />
                 <div onClick={toggleSidebar} className={`${!sidebarExtended && 'hidden'} lg:hidden absolute z-10 w-full h-screen`} />
                 <main className="flex overflow-auto flex-col w-full min-h-screen bg-white dark:bg-bastille-300">
-                    <div className="mt-20 flex-grow mx-7 mb-10">
+                    <div className="flex-grow mx-7 mt-20 mb-10">
                         <div {...HTMLElements} className={`flex-grow ${HTMLElements.className}`}>
                             {children}
                         </div>
