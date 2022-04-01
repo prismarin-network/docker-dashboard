@@ -15,6 +15,12 @@ public class ImagesService {
     @Inject
     DockerConnection connection;
 
+    /**
+     * Retrieve all docker all images {@link Image}
+     * and convert it into a DTO {@link ImageDto}
+     *
+     * @return List of {@link ImageDto}
+     */
     public List<ImageDto> getAllImages() {
         List<ImageDto> images = new ArrayList<>();
         for(Image image : connection.getClient().listImagesCmd().exec()) {
@@ -23,6 +29,12 @@ public class ImagesService {
         return images;
     }
 
+    /**
+     * Retrieve a Image with the matching id. (Example: sha256:adads...)
+     *
+     * @param id
+     * @return {@link ImageDto}
+     */
     public ImageDto getImage(String id) {
         for(Image image : connection.getClient().listImagesCmd().exec()) {
             if(image.getId().equalsIgnoreCase(id)) {
@@ -32,6 +44,12 @@ public class ImagesService {
         return null;
     }
 
+    /**
+     * Delete a image with the matching id
+     *
+     * @param id
+     * @return if deletion was successful
+     */
     public boolean deleteImage(String id) {
         try {
             connection.getClient().removeImageCmd(id).exec();

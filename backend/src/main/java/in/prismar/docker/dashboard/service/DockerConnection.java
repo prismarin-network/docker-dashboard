@@ -27,6 +27,11 @@ public class DockerConnection {
     private DockerClientConfig config;
     private DockerClient client;
 
+    /**
+     * Establish docker connection with properties of {@link ConfigurationContainer}
+     *
+     * @param event
+     */
     public void onStart(@Observes StartupEvent event) {
         this.config = DefaultDockerClientConfig.createDefaultConfigBuilder().build();
         DockerHttpClient httpClient = new ApacheDockerHttpClient.Builder()
